@@ -20,3 +20,16 @@ for i in range(len(list1)) :
     if(list1[i] < smallest):
         smallest = list1[i] 
 print(f"smallest number : {smallest}")
+
+##############ways to populate lists ##################
+
+zeroeslist = [0]*10
+print(f"zeroeslist : {zeroeslist}")
+
+#alternative way
+zeroeslist_alt = [0 for i in range(10)]
+listint = list(range(10)) #0 to 9 
+print(f"listint : {listint}")
+
+listint = list(range(2,10, 3)) #start , end , step
+print(f"listint : {listint}")
