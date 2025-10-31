@@ -40,9 +40,39 @@ def print_list(numsList):
         print(numsList[i], end=" ")
     print("\n******* ")   
 
+
+#Display numbers from a list using a loop
+def print_list2(numsList):
+    for num in numsList:
+        print(num, end=" ")
+    print("\n******* ")
+
+#Count the total number of digits in a number
+
+def numOfDigits(n):
+    print(f"Num of digits in number :{n}") 
+    count = 0
+    if n == 0:
+        print(" is 1")
+        return
+    while abs(n) > 0:
+        count=1+count
+        n//=10
+    print(f" is {count}")
+
+def numOfDigits_math(n):
+    import math
+    if n==0 :
+        return 1
+    return int(math.log10(abs(n)))+1
+
+def numOfDigits_oneliner(n): #simplest : cast number to string and return lenght of string
+    return len (str(abs(n)))
+
 #***************** main ***********************
 # printNnumberwhile(10)
 # printNnumbers(20)
 # printPattern1(5)
 # mult(9)
-print_list([12,12,14,15,16,1,7])
+# print_list2([12,12,14,15,16,1,7])
+print (f"numOfDigits_oneliner : {numOfDigits_oneliner(10)}")
