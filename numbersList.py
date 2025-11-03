@@ -1,4 +1,4 @@
-# Get Largest Number in List
+""" # Get Largest Number in List
 # Write a Python program to get the largest number from a list.
 import random
 list1 =[]
@@ -33,3 +33,16 @@ print(f"listint : {listint}")
 
 listint = list(range(2,10, 3)) #start , end , step
 print(f"listint : {listint}")
+ """
+
+############## oneline code to do above ################
+## read input from user
+#listFromUser = list(map(int, input("Enter space seperated numbers for list entry : ").split()))
+listFromUser =[-12, 32, 122, 0, -321, 4, 5,0, 23, 65, -16]
+print(listFromUser)
+
+print(f"Maximum value in the list is : {max(listFromUser)}")
+print(f"Minimum value in the list is : {min(listFromUser)}")
+print(f"Number of zeroes in the list is {listFromUser.count(0)}")
+print(f"Number of negative numbers in the list is "
+      f"{len([x for x in listFromUser if x<0])}")
