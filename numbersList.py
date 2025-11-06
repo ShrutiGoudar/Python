@@ -25,6 +25,23 @@ print(f"smallest number : {smallest}")
 
 zeroeslist = [0]*10
 print(f"zeroeslist : {zeroeslist}")
+#####consider the same approach and its pitfall for nested lists
+x = [[0]*3]*3
+x[0][0] = 1 # expected o/p : x = [[1,0,0], [0,0,0], [0,0,0]] actually : x = [[1,0,0], [1,0,0], [1,0,0]]
+'''
+whats happening here ? 
+# This creates 3 references to the SAME list object
+x = [[0]*3 ]*3
+
+# It's equivalent to:
+inner_list = [0, 0, 0]
+x = [inner_list, inner_list, inner_list]  # All point to same object!
+'''
+#correct way :
+x = []
+for i in range(3):
+    x.append([0]*3)
+
 
 #alternative way
 zeroeslist_alt = [0 for i in range(10)]
