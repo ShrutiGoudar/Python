@@ -35,3 +35,25 @@ def count_digits(n):
         n //= 10  # More Pythonic than n = n // 10
     
     return count
+
+def check_palindrome_numer(n: int) ->bool:
+    num_of_digits = count_digits(n)
+    copy_of_num = n
+    rev =0
+    while copy_of_num:
+        rev = rev*10 + copy_of_num%10
+        copy_of_num //=10
+    return n == rev
+
+#Basic version
+def check_palindrome(str_name):
+    comp_val = str_name.lower()
+    return comp_val == comp_val[::-1]
+    
+# Refined version : clean code
+def is_palindrome(s: str) -> bool:
+    if isinstance(s, str):
+        return check_palindrome(s)
+    elif isinstance(s, int):
+        return check_palindrome_numer(s)
+
