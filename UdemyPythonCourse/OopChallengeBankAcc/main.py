@@ -1,4 +1,5 @@
 from bank import *
+
 def main() :
     acct1 = Account('Jose',100)
     print(acct1)

@@ -13,7 +13,7 @@ class Account():
     
     def withdraw(self, amount):
         if self.accbal == 0 :
-            print(f"Zero balance!! cannot withdraw")
+            print("Zero balance!! cannot withdraw")
         elif self.accbal < amount:
             print(f"Your current balance is {self.accbal}, cannot withdraw {amount}.")
         else :
