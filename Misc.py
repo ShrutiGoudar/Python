@@ -1,6 +1,17 @@
 import os
 import logging
+from functools import wraps
 
+def log_calls(func):
+    @wraps(func)        #this preserves metadata of func
+    def wrapper(*args, **kwargs ):
+        print (f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+        res = func(*args, **kwargs)
+        print(f"{func.__name__} returned: {res}")
+        return res
+    return wrapper   
+
+@log_calls      # Example of decorator 
 def fibonacci(n):
     #return a list of fibonnaci series of lenght n
     logger = logging.getLogger(__name__)
@@ -56,4 +67,3 @@ def is_palindrome(s: str) -> bool:
         return check_palindrome(s)
     elif isinstance(s, int):
         return check_palindrome_numer(s)
-
