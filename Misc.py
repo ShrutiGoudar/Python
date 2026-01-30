@@ -67,7 +67,3 @@ def is_palindrome(s: str) -> bool:
         return check_palindrome(s)
     elif isinstance(s, int):
         return check_palindrome_numer(s)
-
-
-
-fibonacci(4)
